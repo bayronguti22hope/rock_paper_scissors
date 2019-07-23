@@ -26,6 +26,18 @@ function main(){
 main();
 
 
+var Eva = [ 'bay', 'eli' ]
+
+function Name ({
+    game();
+});
+// var a = 10 ;
+// var b = 5 ;
+
+console.log(Eva);
+
+
+
 
 
 
