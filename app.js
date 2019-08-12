@@ -1,3 +1,4 @@
+// Casing the DOM first
 const userScore = 0 ;
 const computerScore = 0 ;
 const userScore_span = document.getElementById("user-score");
@@ -9,18 +10,20 @@ const paper_div = document.getElementById("paper");
 const scissors_div = document.getElementById("scissors");
 
 
+// Here is the user choices and the computer choices making  random choice to computer
 function getComputerChoice() {
     const choices = ['rock', 'paper', 'scissors'];
-    const randomNumber = Math.floor(Math.random() * 3);
-    return choices[randomNumber];
+    const randomNumber = Math.floor(Math.random() * 3); // Random choice for computer
+    return choices[randomNumber]; // the return from the choices for the computer
 }
-
 
 
 function game(userChoice){
-    const ComputerChoice = getComputerChoice (); 
+    const ComputerChoice = getComputerChoice ();
 }
 
+
+// The events for the when you clicked the bottoms one the options.
 function main(){
     rock_div.addEventListener('click', function(){
         game("rock")
