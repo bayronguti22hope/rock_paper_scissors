@@ -20,6 +20,25 @@ function getComputerChoice() {
 
 function game(userChoice){
     const ComputerChoice = getComputerChoice ();
+    switch ( userChoice + ComputerChoice){ // Will the comparison between the user & computer choice
+        // Case when the user wins
+        case "paperrock":
+        case "scissorspaper":
+        case "rockscissors":
+            console.log(" User wins");
+            break;
+      // Cases when the computer wins
+        case "rockpaper":
+        case "paperscissors":
+        case "scissorsrock":
+            console.log(" User loses");
+            break;
+      // Cases when is a draw
+        case "paperpaper":
+        case "rockrock":
+        case "scissorsscissors":
+            console.log(" Is a Draw");
+    }
 }
 
 
