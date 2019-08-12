@@ -1,20 +1,35 @@
 // Casing the DOM first
-const userScore = 0 ;
-const computerScore = 0 ;
-const userScore_span = document.getElementById("user-score");
-const computerScore_span = document.getElementById("computer-score");
+let userScore = 0 ;
+let computerScore = 0 ;
+let userScore_span = document.getElementById("user-score");
+let computerScore_span = document.getElementById("computer-score");
 const scoreBoard_div = document.querySelector(".score-board");
-const result_div = document.querySelector(".result");
+const result_p = document.querySelector(".result > p");
 const rock_div = document.getElementById("rock");
 const paper_div = document.getElementById("paper");
 const scissors_div = document.getElementById("scissors");
 
 
-// Here is the user choices and the computer choices making  random choice to computer
+// Here is the computer choices making random choice to computer
 function getComputerChoice() {
     const choices = ['rock', 'paper', 'scissors'];
     const randomNumber = Math.floor(Math.random() * 3); // Random choice for computer
     return choices[randomNumber]; // the return from the choices for the computer
+}
+
+function win(userChoice, ComputerChoice ){
+    userScore++;
+    userScore_span.innerHTML = userScore ;
+    computerScore_span.innerHTML = computerScore ;
+    result_p.innerHTML = userChoice + " beats " + ComputerChoice + ". You win!! ";
+}
+
+
+function loses(){
+    console.log( "you lost");
+}
+function draw(){
+    console.log( "is a draw ");
 }
 
 
@@ -25,19 +40,20 @@ function game(userChoice){
         case "paperrock":
         case "scissorspaper":
         case "rockscissors":
-            console.log(" User wins");
+            win();
             break;
       // Cases when the computer wins
         case "rockpaper":
         case "paperscissors":
         case "scissorsrock":
-            console.log(" User loses");
+            loses();
             break;
       // Cases when is a draw
         case "paperpaper":
         case "rockrock":
         case "scissorsscissors":
-            console.log(" Is a Draw");
+           draw();
+           break;
     }
 }
 
