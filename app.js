@@ -31,11 +31,6 @@ function draw(){
     console.log('this is draw.')
 }
 
-function testSpan(){
-    if (typeof userScore_span !== 'undefined') {
-        console.log("userScore_span is error? ") // Ahora sabemos que foo está definido, ahora podemos continuar.
-      }
-}
 
 
 
@@ -53,7 +48,6 @@ function game(userChoice){
         case "paperscissors":
         case "scissorsrock":
             loses();
-            testSpan();
             break;
       // Cases when is a draw
         case "paperpaper":
