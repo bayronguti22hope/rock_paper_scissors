@@ -1,8 +1,8 @@
 // Casing the DOM first
 let userScore = 0 ;
 let computerScore = 0 ;
-let userScore_span = document.getElementById("user-score");
-let computerScore_span = document.getElementById("computer-score");
+const userScore_span = document.getElementById("user_score");
+const computerScore_span = document.getElementById("comp_score");
 const scoreBoard_div = document.querySelector(".score-board");
 const result_p = document.querySelector(".result > p");
 const rock_div = document.getElementById("rock");
@@ -17,20 +17,26 @@ function getComputerChoice() {
     return choices[randomNumber]; // the return from the choices for the computer
 }
 
-function win(userChoice, ComputerChoice ){
+function win() {
     userScore++;
     userScore_span.innerHTML = userScore ;
     computerScore_span.innerHTML = computerScore ;
-    result_p.innerHTML = userChoice + " beats " + ComputerChoice + ". You win!! ";
 }
-
-
 function loses(){
-    console.log( "you lost");
+    computerScore++;
+    computerScore_span.innerHTML = computerScore;
+    userScore_span.innerHTML = userScore ;
 }
 function draw(){
-    console.log( "is a draw ");
+    console.log('this is draw.')
 }
+
+function testSpan(){
+    if (typeof userScore_span !== 'undefined') {
+        console.log("userScore_span is error? ") // Ahora sabemos que foo está definido, ahora podemos continuar.
+      }
+}
+
 
 
 function game(userChoice){
@@ -47,6 +53,7 @@ function game(userChoice){
         case "paperscissors":
         case "scissorsrock":
             loses();
+            testSpan();
             break;
       // Cases when is a draw
         case "paperpaper":
