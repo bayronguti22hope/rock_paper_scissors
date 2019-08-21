@@ -106,12 +106,20 @@ function main(){
     rock_div.addEventListener('click', function(){
         game("rock")
     })
+    // ES6 way to do it
+    // rock_div.addEventListener('click', () => game("rock"));
+
     paper_div.addEventListener('click', function(){
         game("paper")
     })
+    // ES6 way to do it
+    //paper_div.addEventListener('click', () => game("paper"));
+
     scissors_div.addEventListener('click', function(){
         game("scissors")
     })
+    // ES6 way to do it
+    // scissors_div.addEventListener('click', () => game("scissors"))
 }
 main();
 
