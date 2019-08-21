@@ -26,30 +26,57 @@ function getComputerChoice() {
     }
 // Functions for change base on the result (win, lost, draw).
 function win(userChoice, ComputerChoice) {
+    const smallWordUser = "user".fontsize(3).sup();
+    const smallWordComp = "comp".fontsize(3).sup();
+    const userChoice_div = document.getElementById(userChoice);
     userScore++;
     userScore_span.innerHTML = userScore ;
     computerScore_span.innerHTML = computerScore ;
-    const smallWordUser = "user".fontsize(3).sup();
-    const smallWordComp = "comp".fontsize(3).sup();
     // ES5 way to do it
     // result_p.innerHTML = convertToWord(userChoice) + " beats " + convertToWord(ComputerChoice) + "." + "You win!"
     // ES6 way to do it
     result_p.innerHTML = ` ${convertToWord(userChoice)}${smallWordUser} beats ${convertToWord(ComputerChoice)}${smallWordComp}. You win!`
+    userChoice_div.classList.add('green-glow');
+    setTimeout(function() 
+    { userChoice_div.classList.remove('green-glow')
+    }, 300);
+    // // ES6 way to do it
+    // setTimeout(() =>
+    // userChoice_div.classList.remove('green-glow')
+    // , 300);
 }
 function loses(userChoice, ComputerChoice){
+    const smallWordUser = "user".fontsize(3).sup();
+    const smallWordComp = "comp".fontsize(3).sup();
+    const userChoice_div = document.getElementById(userChoice);
     computerScore++;
     userScore_span.innerHTML = userScore ;
     computerScore_span.innerHTML = computerScore ;
-    const smallWordUser = "user".fontsize(3).sup();
-    const smallWordComp = "comp".fontsize(3).sup();
     // ES6 way to do it
     result_p.innerHTML = ` ${convertToWord(userChoice)}${smallWordUser} loses to ${convertToWord(ComputerChoice)}${smallWordComp}. You lost.`
+    userChoice_div.classList.add('red-glow');
+    setTimeout(function()
+    { userChoice_div.classList.remove('red-glow')
+    }, 300);
+    // ES6 way to do it
+    // setTimeout(() =>
+    // userChoice_div.classList.remove('red-glow')
+    // , 300);
 }
 function draw(userChoice, ComputerChoice){
     const smallWordUser = "user".fontsize(3).sup();
     const smallWordComp = "comp".fontsize(3).sup();
+    const userChoice_div = document.getElementById(userChoice);
     // ES6 way to do it
     result_p.innerHTML = ` ${convertToWord(userChoice)}${smallWordUser} equals ${convertToWord(ComputerChoice)}${smallWordComp}. It's draw.`
+    userChoice_div.classList.add('gray-glow');
+    setTimeout(function()
+    { userChoice_div.classList.remove('gray-glow')
+    }, 300);
+    // // ES6 way to do it
+    // setTimeout(() =>
+    // userChoice_div.classList.remove('gray-glow')
+    // , 300);
 }
 function game(userChoice){
     const ComputerChoice = getComputerChoice ();
