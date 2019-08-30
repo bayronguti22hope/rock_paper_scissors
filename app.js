@@ -113,7 +113,7 @@ function main(){
         game("paper")
     })
     // ES6 way to do it
-    //paper_div.addEventListener('click', () => game("paper"));
+    //paper_div.addEventListener('click', () => game("paper"));x
 
     scissors_div.addEventListener('click', function(){
         game("scissors")
